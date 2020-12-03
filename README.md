@@ -92,7 +92,7 @@ PhageAI lifecycle classifier was benchmarked with [PHACTS](https://github.com/de
 
 Classifier | Version | Correct | Invalid | Score |
 --- | --- | --- | --- | --- |
-**PhageAI** | 1.3 | **81** | **0** | **100%** |
+**PhageAI** | **1.3** | **81** | **0** | **100%** |
 bacphlip | 0.9.6 | 80 | 1 | 99% |
 VIBRANT | 1.2.1 | 76 | 5 | 94% |
 PHACTS | Unknown | 73 | 8 | 90% |
