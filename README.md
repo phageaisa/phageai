@@ -2,9 +2,16 @@
   <img src="https://pbs.twimg.com/profile_banners/1168677863442268160/1580499452/1500x500">
 </p>
 
+**PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.  
 
-PhageAI is an AI-driven software platform using advanced Machine Learning and Natural Language Processing techniques for deeper understanding of the bacteriophages genomics.
+Machine Learning algorithms can process enormous amounts of data in relatively short time in order to find connections and dependencies that are unobvious for human beings. Correctly designed applications based on AI are able to vastly improve and speed up the work of the domain experts.  
 
+Models based on DNA contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **virulent** or **temperate** with a high probability.  
+
+One of the key system modules is the bacteriophages repository with a clean web interface that allows to browse, upload and share data with other users. The gathered knowledge about the bacteriophages is not only valuable on its own but also because of the ability to train the ever-improving Machine Learning models.  
+
+Detection of virulent or temperate features is only one of the first tasks that can be solved with Artificial Intelligence. The combination of Biology, Natural Language Processing and Machine Learning allows us to create algorithms for genomic data processing that could eventually turn out to be effective in a wide range of problems with focus on classification and information extraced from DNA.  
+  
 
 [![Travis CI](https://travis-ci.com/ProteonPharmaceuticals/phageai.svg?branch=main)](https://travis-ci.com/github/ProteonPharmaceuticals/phageai)
 [![codecov](https://codecov.io/gh/ProteonPharmaceuticals/phageai/branch/master/graph/badge.svg)](https://codecov.io/gh/ProteonPharmaceuticals/phageai)
@@ -19,7 +26,7 @@ PhageAI is an AI-driven software platform using advanced Machine Learning and Na
 
 ## Table of Contents
 
-[Framework modules](https://github.com/ProteonPharmaceuticals/phageai#framework-modules) | [Documentation](https://github.com/ProteonPharmaceuticals/phageai#documentation) | [Installation](https://github.com/ProteonPharmaceuticals/phageai#installation-and-usage) | [Community and Contributions](https://github.com/ProteonPharmaceuticals/phageai#community-and-contributions) | [Have a question?](https://github.com/ProteonPharmaceuticals/phageai#have-a-question) | [Found a bug?](https://github.com/ProteonPharmaceuticals/phageai#found-a-bug) | [Team](https://github.com/ProteonPharmaceuticals/phageai#team) | [Change log](https://github.com/ProteonPharmaceuticals/phageai#change-log) | [License](https://github.com/ProteonPharmaceuticals/phageai#license) | [Cite](https://github.com/ProteonPharmaceuticals/phageai#cite)
+[Framework modules](https://github.com/ProteonPharmaceuticals/phageai#framework-modules) | [Documentation](https://github.com/ProteonPharmaceuticals/phageai#documentation) | [Installation](https://github.com/ProteonPharmaceuticals/phageai#installation-and-usage) | [Benchmark](https://github.com/ProteonPharmaceuticals/phageai#benchmark) | [Community and Contributions](https://github.com/ProteonPharmaceuticals/phageai#community-and-contributions) | [Have a question?](https://github.com/ProteonPharmaceuticals/phageai#have-a-question) | [Found a bug?](https://github.com/ProteonPharmaceuticals/phageai#found-a-bug) | [Team](https://github.com/ProteonPharmaceuticals/phageai#team) | [Change log](https://github.com/ProteonPharmaceuticals/phageai#change-log) | [License](https://github.com/ProteonPharmaceuticals/phageai#license) | [Cite](https://github.com/ProteonPharmaceuticals/phageai#cite)
 
 ## Framework modules
 
@@ -36,18 +43,16 @@ The official technical documentation is hosted on ReadTheDocs: https://phageai.r
 #### PhageAI user account (1/3)
 Create a free user account in [the PhageAI web platform](https://phage.ai) or use an existing one. If you had to create new one, activate your account by activation link which was sent on your mail inbox. After that, log into the platform successfully and click "My profile" on menu (left sidebar). From the "API access" section copy the access token (string) and keep it for the steps below.
 
+<p align="center">
+  <img src="https://github.com/ptynecki/phageai/blob/develop/media/phageai-access-token.png">
+</p>
+
 #### PhageAI package (2/3)
 
 _PhageAI_ requires Python 3.8.0+ to run and can be installed by running:
 
 ```
 pip install phageai
-```
-
-Alternatively, you also can use the Conda ecosystem:
-
-```
-conda install -c conda-forge phageai
 ```
 
 If you can't wait for the latest hotness from the develop branch, then install it directly from the repository:
@@ -58,11 +63,15 @@ pip install git+git://github.com/ProteonPharmaceuticals/phageai.git@develop
 
 #### PhageAI execution (3/3)
 
+`PASTE_YOUR_ACCESS_TOKEN_HERE` - PhageAI web user's access token;  
+`PASTE_YOUR_FASTA_PATH_HERE` - FASTA filename with *.fasta or *.fa extension;
+
+
 ```python
 from phageai.lifecycle.classifier import LifeCycleClassifier
 
-lcc = LifeCycleClassifier(access_token='<PASTE_YOUR_ACCESS_TOKEN_HERE>')
-lcc.predict(fasta_path='<PASTE_YOUR_FASTA_PATH_HERE>')
+lcc = LifeCycleClassifier(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
+lcc.predict(fasta_path='PASTE_YOUR_FASTA_PATH_HERE')
 ```
 
 Expected output for `MG945357.fasta` bacateriophage sample:
@@ -76,6 +85,19 @@ Expected output for `MG945357.fasta` bacateriophage sample:
 ```
 
 We shared numerous examples of using the framework in Jupyter Notebook format (*.ipynb).
+
+## Benchmark
+
+PhageAI lifecycle classifier was benchmarked with [PHACTS](https://github.com/deprekate/PHACTS), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [bacphlip](https://github.com/adamhockenberry/bacphlip) tools using 81 bacteriophages from our paper (testing set). Correct predictions results:
+
+Classifier | Version | Correct | Invalid | Score |
+--- | --- | --- | --- | --- |
+**PhageAI** | **1.3** | **81** | **0** | **100%** |
+bacphlip | 0.9.6 | 80 | 1 | 99% |
+VIBRANT | 1.2.1 | 76 | 5 | 94% |
+PHACTS | Unknown | 73 | 8 | 90% |
+
+Full comparison report is [available here](https://github.com/ptynecki/phageai/blob/develop/media/phageai-81-testset-phages-benchmark-03.12.2020.xlsx) (as XLSX).  
 
 ## Community and Contributions
 
