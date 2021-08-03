@@ -16,7 +16,7 @@ dependencies = (CURRENT_DIR / "requirements.txt").read_text()
 dependencies = list(map(str.strip, filter(None, dependencies.split("\n"))))
 
 
-version = "0.1.1"
+version = "0.2.0"
 
 setup(
     name="phageai",
@@ -25,10 +25,10 @@ setup(
     description=description,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="Proteon Pharmaceuticals S.A.",
-    author_email="phageai@proteonpharma.com",
-    url="https://github.com/ProteonPharmaceuticals/phageai",
-    download_url=f"https://github.com/ProteonPharmaceuticals/phageai/archive/v{version}.tar.gz",
+    author="PhageAI S.A.",
+    author_email="contact@phage.ai",
+    url="https://github.com/phageaisa/phageai",
+    download_url=f"https://github.com/phageaisa/phageai/archive/v{version}.tar.gz",
     setup_requires=["setuptools>=50.3.0", "wheel>=0.35.1"],
     install_requires=dependencies,
     packages=[
