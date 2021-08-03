@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ProteonPharmaceuticals/phageai/main/media/phageai.jpeg">
+  <img src="https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai.jpeg">
 </p>
 
 **PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.  
@@ -26,7 +26,7 @@ Detection of virulent or temperate features is only one of the first tasks that 
 
 ## Table of Contents
 
-[Framework modules](https://github.com/ProteonPharmaceuticals/phageai#framework-modules) | [Documentation](https://github.com/ProteonPharmaceuticals/phageai#documentation) | [Installation](https://github.com/ProteonPharmaceuticals/phageai#installation-and-usage) | [Benchmark](https://github.com/ProteonPharmaceuticals/phageai#benchmark) | [Community and Contributions](https://github.com/ProteonPharmaceuticals/phageai#community-and-contributions) | [Have a question?](https://github.com/ProteonPharmaceuticals/phageai#have-a-question) | [Found a bug?](https://github.com/ProteonPharmaceuticals/phageai#found-a-bug) | [Team](https://github.com/ProteonPharmaceuticals/phageai#team) | [Change log](https://github.com/ProteonPharmaceuticals/phageai#change-log) | [License](https://github.com/ProteonPharmaceuticals/phageai#license) | [Cite](https://github.com/ProteonPharmaceuticals/phageai#cite)
+[Framework modules](https://github.com/phageaisa/phageai#framework-modules) | [Documentation](https://github.com/phageaisa/phageai#documentation) | [Installation](https://github.com/phageaisa/phageai#installation-and-usage) | [Benchmark](https://github.com/phageaisa/phageai#benchmark) | [Community and Contributions](https://github.com/phageaisa/phageai#community-and-contributions) | [Have a question?](https://github.com/phageaisa/phageai#have-a-question) | [Found a bug?](https://github.com/phageaisa/phageai#found-a-bug) | [Team](https://github.com/phageaisa/phageai#team) | [Change log](https://github.com/phageaisa/phageai#change-log) | [License](https://github.com/phageaisa/phageai#license) | [Cite](https://github.com/phageaisa/phageai#cite)
 
 ## Framework modules
 
@@ -46,7 +46,7 @@ The official technical documentation is hosted on ReadTheDocs: https://phageai.r
 Create a free user account in [the PhageAI web platform](https://phage.ai/) or use an existing one. If you had to create new one, activate your account by activation link which was sent on your mail inbox. After that, log into the platform successfully and click "My profile" on menu (left sidebar). From the "API access" section copy the access token (string) and keep it for the steps below.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ProteonPharmaceuticals/phageai/main/media/phageai-access-token.png">
+  <img src="https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai-access-token.png">
 </p>
 
 #### PhageAI package (2/3)
@@ -60,7 +60,7 @@ pip install phageai
 If you can't wait for the latest hotness from the develop branch, then install it directly from the repository:
 
 ```
-pip install git+git://github.com/ProteonPharmaceuticals/phageai.git@develop
+pip install git+git://github.com/phageaisa/phageai.git@develop
 ```
 
 #### PhageAI execution (3/3)
@@ -121,13 +121,14 @@ Obviously if you have a private question or want to cooperate with us, you can a
 
 ## Found a bug?
 
-Feel free to add a new issue with a respective title and description on the [the PhageAI repository](https://github.com/ProteonPharmaceuticals/phageai/issues). If you already found a solution to your problem, we would be happy to review your pull request.
+Feel free to add a new issue with a respective title and description on the [the PhageAI repository](https://github.com/phageaisa/phageai/issues). If you already found a solution to your problem, we would be happy to review your pull request.
 
 ## Team
 
 Core Developers and Domain Experts who contributing to PhageAI:
 
 * Piotr Tynecki
+* Łukasz Wałejko
 * Joanna Kazimierczak
 * Arkadiusz Guziński
 * Bogumił Zimoń
@@ -136,11 +137,11 @@ Core Developers and Domain Experts who contributing to PhageAI:
 
 The log's will become rather long. It moved to its own file.
 
-See [CHANGELOG.md](https://github.com/ProteonPharmaceuticals/phageai/blob/master/CHANGELOG.md).
+See [CHANGELOG.md](https://github.com/phageaisa/phageai/blob/master/CHANGELOG.md).
 
 ## License
 
-The PhageAI package is released under the under terms of [the MIT License](https://github.com/ProteonPharmaceuticals/phageai/blob/master/LICENSE).
+The PhageAI package is released under the under terms of [the MIT License](https://github.com/phageaisa/phageai/blob/master/LICENSE).
 
 ## Cite
 
