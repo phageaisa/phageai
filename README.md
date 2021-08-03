@@ -107,7 +107,7 @@ bacphlip | 0.9.6 | 80 | 1 | 99% |
 VIBRANT | 1.2.1 | 76 | 5 | 94% |
 PHACTS | Unknown | 73 | 8 | 90% |
 
-Full comparison report is [available here](https://github.com/ptynecki/phageai/blob/develop/media/phageai-81-testset-phages-benchmark-03.12.2020.xlsx) (as XLSX).  
+Full comparison report is [available here](https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai-81-testset-phages-benchmark-03.12.2020.xlsx) (as XLSX).  
 
 ## Community and Contributions
 
