@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://pbs.twimg.com/profile_banners/1168677863442268160/1580499452/1500x500">
+  <img src="https://raw.githubusercontent.com/ProteonPharmaceuticals/phageai/main/media/phageai.jpeg">
 </p>
 
 **PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.  
 
 Machine Learning algorithms can process enormous amounts of data in relatively short time in order to find connections and dependencies that are unobvious for human beings. Correctly designed applications based on AI are able to vastly improve and speed up the work of the domain experts.  
 
-Models based on DNA contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **virulent** or **temperate** with a high probability.  
+Models based on DNA contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **chronic**, **temperate** or **virulent** with a high probability.  
 
 One of the key system modules is the bacteriophages repository with a clean web interface that allows to browse, upload and share data with other users. The gathered knowledge about the bacteriophages is not only valuable on its own but also because of the ability to train the ever-improving Machine Learning models.  
 
@@ -30,9 +30,11 @@ Detection of virulent or temperate features is only one of the first tasks that 
 
 ## Framework modules
 
-`lifecycle` - set of methods related with bacteriophage lifecycle research (exploration, prediction);  
-`taxonomy` - set of methods related with bacteriophage taxonomy research (TBA);  
-`repository` - set of methods related with PhageAI bacteriophage repository (TBA); 
+Set of methods related with:
+* `lifecycle` - bacteriophage lifecycle prediction;  
+* `taxonomy` - bacteriophage taxonomy order, family and genus prediction (TBA);  
+* `topology` - bacteriophage genome topology prediction (TBA);  
+* `repository` - set of methods related with PhageAI bacteriophage repository (TBA); 
 
 ## Documentation
 
@@ -41,10 +43,10 @@ The official technical documentation is hosted on ReadTheDocs: https://phageai.r
 ## Installation and usage
 
 #### PhageAI user account (1/3)
-Create a free user account in [the PhageAI web platform](https://phage.ai) or use an existing one. If you had to create new one, activate your account by activation link which was sent on your mail inbox. After that, log into the platform successfully and click "My profile" on menu (left sidebar). From the "API access" section copy the access token (string) and keep it for the steps below.
+Create a free user account in [the PhageAI web platform](https://phage.ai/) or use an existing one. If you had to create new one, activate your account by activation link which was sent on your mail inbox. After that, log into the platform successfully and click "My profile" on menu (left sidebar). From the "API access" section copy the access token (string) and keep it for the steps below.
 
 <p align="center">
-  <img src="https://github.com/ptynecki/phageai/blob/develop/media/phageai-access-token.png">
+  <img src="https://raw.githubusercontent.com/ProteonPharmaceuticals/phageai/main/media/phageai-access-token.png">
 </p>
 
 #### PhageAI package (2/3)
@@ -84,7 +86,15 @@ Expected output for `MG945357.fasta` bacateriophage sample:
 }
 ```
 
-We shared numerous examples of using the framework in Jupyter Notebook format (*.ipynb).
+or, if you reach out daily API requests limit, you can expect:
+
+```json
+{
+    "author": ["Your daily API limit (100 requests) has been exceeded"]
+}
+```
+
+We will share numerous examples of using the package in Jupyter Notebook format (*.ipynb) soon.
 
 ## Benchmark
 
@@ -120,7 +130,7 @@ Core Developers and Domain Experts who contributing to PhageAI:
 * Piotr Tynecki
 * Joanna Kazimierczak
 * Arkadiusz Guziński
-* Bogusław Zimoń
+* Bogumił Zimoń
 
 ## Change log
 
