@@ -68,6 +68,7 @@ pip install git+git://github.com/phageaisa/phageai.git@develop
 `PASTE_YOUR_ACCESS_TOKEN_HERE` - PhageAI web user's access token;  
 `PASTE_YOUR_FASTA_PATH_HERE` - FASTA filename with *.fasta or *.fa extension;
 
+### Example I - single phage prediction
 
 ```python
 from phageai.lifecycle.classifier import LifeCycleClassifier
@@ -92,6 +93,48 @@ or, if you reach out daily API requests limit, you can expect:
 {
     "author": ["Your daily API limit (100 requests) has been exceeded"]
 }
+```
+
+### Example II - prediction for directory with phages
+
+```python
+import os
+import csv
+from pathlib import Path
+
+from phageai.lifecycle.classifier import LifeCycleClassifier
+
+lcc = LifeCycleClassifier(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
+
+# Be aware that directory have to includes *.fasta files only
+phage_dir_path = Path('PASTE_YOUR_DIRECTORY_NAME_WITH_FASTA_FILES')
+phage_directory = os.listdir(phage_dir_path)
+
+prediction_results = {}
+
+for single_fasta_file in phage_directory:
+    prediction_results[single_fasta_file] = lcc.predict(fasta_path=phage_dir_path / single_fasta_file)
+
+# Python dict with prediction results
+for fasta, phageai in prediction_results.items():
+    print(fasta, phageai)
+
+# Prepare CSV report as a final result
+csv_columns = [
+    'fasta_name', 'model_class_label', 'prediction_accuracy',
+    'gc', 'sequence_length'
+]
+
+# CSV file name
+csv_file = "phageai_report.csv"
+
+with open(csv_file, 'w') as csv_file:
+    writer = csv.DictWriter(csv_file, fieldnames=csv_columns)
+    writer.writeheader()
+
+    for fasta_name, phage_data in zip(prediction_results.keys(), prediction_results.values()):
+        phage_data["fasta_name"] = fasta_name
+        writer.writerow(phage_data)
 ```
 
 We will share numerous examples of using the package in Jupyter Notebook format (*.ipynb) soon.
