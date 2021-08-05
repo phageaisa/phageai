@@ -113,7 +113,10 @@ phage_directory = os.listdir(phage_dir_path)
 prediction_results = {}
 
 for single_fasta_file in phage_directory:
-    prediction_results[single_fasta_file] = lcc.predict(fasta_path=phage_dir_path / single_fasta_file)
+    try:
+        prediction_results[single_fasta_file] = lcc.predict(fasta_path=phage_dir_path / single_fasta_file)
+    except Exception as e:
+        print(f'[PhageAI] Phage {single_fasta_file} raised an exception "{e}"')
 
 # Python dict with prediction results
 for fasta, phageai in prediction_results.items():
