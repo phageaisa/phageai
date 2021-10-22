@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+## [0.3.0] - 22.10.2020
+### Added
+* Added method for fetching bacteriophage meta-data;
+* Added method for calculating alignment-free phage similarity (top-10);
+### Changed
+* `README.md` updated;
+
+
 ## [0.2.0] - 03.08.2021
 ### Added
 * Added user requests limit support;

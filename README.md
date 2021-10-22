@@ -31,10 +31,13 @@ Detection of virulent or temperate features is only one of the first tasks that 
 ## Framework modules
 
 Set of methods related with:
-* `lifecycle` - bacteriophage lifecycle prediction;  
+* `lifecycle` - bacteriophage lifecycle prediction:
+  * `.predict(fasta_path)` - return bacteriophage lifecycle prediction class (Virulent, Temperate or Chronic) with probability (%); 
 * `taxonomy` - bacteriophage taxonomy order, family and genus prediction (TBA);  
 * `topology` - bacteriophage genome topology prediction (TBA);  
-* `repository` - set of methods related with PhageAI bacteriophage repository (TBA); 
+* `repository` - set of methods related with PhageAI bacteriophage repository:
+  * `.get_record(value)` - return dict with Bacteriophage meta-data
+  * `.get_top10_similar_phages(value)` - return list of dicts contained top-10 most similar bacteriophages
 
 ## Documentation
 
@@ -140,20 +143,34 @@ with open(csv_file, 'w') as csv_file:
         writer.writerow(phage_data)
 ```
 
+### Example III - get bacteriophage meta-data and top-10 similar samples from PhageAI
+
+```python
+from phageai.repository.phages import BacteriophageRepository
+
+phageai_repo = BacteriophageRepository(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
+
+# Get bacteriophage meta-data based on accession number (or hash value)
+# It can return one or more than one results
+phageai_repo.get_record(value='MZ375324')
+
+# Get top 10 similar bacteriophage samples
+phageai_repo.get_top10_similar_phages(value='MZ375324')
+```
+
 We will share numerous examples of using the package in Jupyter Notebook format (*.ipynb) soon.
 
 ## Benchmark
 
-PhageAI lifecycle classifier was benchmarked with [PHACTS](https://github.com/deprekate/PHACTS), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [bacphlip](https://github.com/adamhockenberry/bacphlip) tools using 81 bacteriophages from our paper (testing set). Correct predictions results:
+PhageAI lifecycle classifier was benchmarked with [DeePhage](https://github.com/shufangwu/DeePhage), [bacphlip](https://github.com/adamhockenberry/bacphlip), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [PHACTS](https://github.com/deprekate/PHACTS) tools using 91 Virulent and Temperate bacteriophages from our paper (testing set). Correct predictions results:
 
-Classifier | Version | Correct | Invalid | Score |
---- | --- | --- | --- | --- |
-**PhageAI** | **1.3** | **81** | **0** | **100%** |
-bacphlip | 0.9.6 | 80 | 1 | 99% |
-VIBRANT | 1.2.1 | 76 | 5 | 94% |
-PHACTS | Unknown | 73 | 8 | 90% |
-
-Full comparison report is [available here](https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai-81-testset-phages-benchmark-03.12.2020.xlsx) (as XLSX).  
+Tool | Version | Chronic support | No. viruses' genomes | Test set accuracy | DOI |
+--- | --- | --- | --- | --- | --- |
+**PhageAI** | **1.5** | **Yes** | **17 559** | **98,90** | **This research** |
+DeePhage | 1.0 | No | 1 640 | N/A | 10.1093/gigascience/giab056 |
+bacphlip | 0.9.6 | No | 1 057 | 100 | 10.7717/peerj.11396 |
+VIBRANT | 1.2.1 | No | 350 626 | 92,31 | 10.1186/s40168-020-00867-0 |
+PHACTS | 0.3 | No | 227 | 89,13 | 10.1093/bioinformatics/bts014 |
 
 ## Community and Contributions
 
