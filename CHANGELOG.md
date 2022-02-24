@@ -1,8 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 24.02.2022
+### Changed
+* Bugfix for URL addresses;
 
-## [0.3.0] - 22.10.2020
+
+## [0.3.0] - 22.10.2021
 ### Added
 * Added method for fetching bacteriophage meta-data;
 * Added method for calculating alignment-free phage similarity (top-10);
