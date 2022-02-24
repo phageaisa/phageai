@@ -54,7 +54,7 @@ class BacteriophageRepository:
         Return dict with bacteriophage meta-data
         """
 
-        api_url = base64.b64decode("aHR0cHM6Ly9waGFnZS5haS9hcGkvYmFjdGVyaW9waGFnZS8=").decode('utf-8')
+        api_url = base64.b64decode("aHR0cHM6Ly9hcHAucGhhZ2UuYWkvYXBpL2JhY3RlcmlvcGhhZ2Uv").decode('utf-8')
 
         return self._make_request(
             api_url=api_url,
@@ -66,7 +66,7 @@ class BacteriophageRepository:
         Return list of dicts contained top-10 most similar bacteriophages
         """
 
-        api_url = base64.b64decode("aHR0cHM6Ly9waGFnZS5haS9hcGkvYmFjdGVyaW9waGFnZS8=").decode('utf-8')
+        api_url = base64.b64decode("aHR0cHM6Ly9hcHAucGhhZ2UuYWkvYXBpL2JhY3RlcmlvcGhhZ2Uv").decode('utf-8')
         postfix = base64.b64decode("L3RvcF8xMC8=").decode('utf-8')
 
         return self._make_request(

@@ -15,7 +15,7 @@ class LifeCycleClassifier:
     DOI: 10.1101/2020.07.11.198606
     """
 
-    API_URL = "aHR0cHM6Ly9waGFnZS5haS9hcGkvbGlmZWN5Y2xlX3ByZWRpY3Rpb24v"
+    API_URL = "aHR0cHM6Ly9hcHAucGhhZ2UuYWkvYXBpL2xpZmVjeWNsZV9wcmVkaWN0aW9uLw=="
     EXPECTED_HTTP_STATUS = 201
 
     def __init__(self, access_token: str) -> None:
