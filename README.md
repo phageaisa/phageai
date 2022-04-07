@@ -23,7 +23,7 @@ Detection of virulent or temperate features is only one of the first tasks that 
 
 ## Table of Contents
 
-[Framework modules](https://github.com/phageaisa/phageai#framework-modules) | [Documentation](https://github.com/phageaisa/phageai#documentation) | [Installation](https://github.com/phageaisa/phageai#installation-and-usage) | [Benchmark](https://github.com/phageaisa/phageai#benchmark) | [Community and Contributions](https://github.com/phageaisa/phageai#community-and-contributions) | [Have a question?](https://github.com/phageaisa/phageai#have-a-question) | [Found a bug?](https://github.com/phageaisa/phageai#found-a-bug) | [Team](https://github.com/phageaisa/phageai#team) | [Change log](https://github.com/phageaisa/phageai#change-log) | [License](https://github.com/phageaisa/phageai#license) | [Cite](https://github.com/phageaisa/phageai#cite)
+[Framework modules](https://github.com/phageaisa/phageai#framework-modules) | [Installation](https://github.com/phageaisa/phageai#installation-and-usage) | [Benchmark](https://github.com/phageaisa/phageai#benchmark) | [Community and Contributions](https://github.com/phageaisa/phageai#community-and-contributions) | [Have a question?](https://github.com/phageaisa/phageai#have-a-question) | [Found a bug?](https://github.com/phageaisa/phageai#found-a-bug) | [Team](https://github.com/phageaisa/phageai#team) | [Change log](https://github.com/phageaisa/phageai#change-log) | [License](https://github.com/phageaisa/phageai#license) | [Cite](https://github.com/phageaisa/phageai#cite)
 
 ## Framework modules
 
@@ -35,10 +35,6 @@ Set of methods related with:
 * `repository` - set of methods related with PhageAI bacteriophage repository:
   * `.get_record(value)` - return dict with Bacteriophage meta-data
   * `.get_top10_similar_phages(value)` - return list of dicts contained top-10 most similar bacteriophages
-
-## Documentation
-
-The official technical documentation is hosted on ReadTheDocs: https://phageai.readthedocs.io
 
 ## Installation and usage
 
