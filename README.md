@@ -13,9 +13,6 @@ One of the key system modules is the bacteriophages repository with a clean web 
 Detection of virulent or temperate features is only one of the first tasks that can be solved with Artificial Intelligence. The combination of Biology, Natural Language Processing and Machine Learning allows us to create algorithms for genomic data processing that could eventually turn out to be effective in a wide range of problems with focus on classification and information extraced from DNA.  
   
 
-[![Travis CI](https://travis-ci.com/ProteonPharmaceuticals/phageai.svg?branch=main)](https://travis-ci.com/github/ProteonPharmaceuticals/phageai)
-[![codecov](https://codecov.io/gh/ProteonPharmaceuticals/phageai/branch/master/graph/badge.svg)](https://codecov.io/gh/ProteonPharmaceuticals/phageai)
-[![Documentation Status](https://readthedocs.org/projects/phageai/badge/?version=stable)](https://phageai.readthedocs.io/en/stable/?badge=stable)
 [![PyPI version](https://img.shields.io/pypi/v/phageai.svg)](https://pypi.org/project/phageai/)
 [![PyPI license](https://img.shields.io/pypi/l/phageai.svg)](https://pypi.python.org/pypi/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/phageai.svg)](https://pypi.python.org/pypi/phageai/)
