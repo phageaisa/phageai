@@ -91,6 +91,8 @@ or, if you reach out daily API requests limit, you can expect:
 }
 ```
 
+If you reach out your daily requests limit, and you still need more, feel free to contact us by contact@phageai.
+
 ### Example II - prediction for directory with phages
 
 ```python
