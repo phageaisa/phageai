@@ -187,6 +187,7 @@ Core Developers and Domain Experts who contributing to PhageAI:
 
 * Piotr Tynecki
 * Łukasz Wałejko
+* Krzysztof Owsieniuk
 * Joanna Kazimierczak
 * Arkadiusz Guziński
 * Bogumił Zimoń

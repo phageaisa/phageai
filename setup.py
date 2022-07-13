@@ -16,7 +16,7 @@ dependencies = (CURRENT_DIR / "requirements.txt").read_text()
 dependencies = list(map(str.strip, filter(None, dependencies.split("\n"))))
 
 
-version = "0.3.1"
+version = "0.4.0"
 
 setup(
     name="phageai",

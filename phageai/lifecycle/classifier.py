@@ -1,13 +1,12 @@
 import os
-import base64
 
-import logging
 import requests
+import logging
 
-logging.basicConfig(level=logging.INFO)
+from phageai.phageai_auth import PhageAIConnector
 
 
-class LifeCycleClassifier:
+class LifeCycleClassifier(PhageAIConnector):
     """
     Bacteriophage life cycle classifier
 
@@ -15,18 +14,7 @@ class LifeCycleClassifier:
     DOI: 10.1101/2020.07.11.198606
     """
 
-    API_URL = "aHR0cHM6Ly9hcHAucGhhZ2UuYWkvYXBpL2xpZmVjeWNsZV9wcmVkaWN0aW9uLw=="
     EXPECTED_HTTP_STATUS = 201
-
-    def __init__(self, access_token: str) -> None:
-        """
-        Setup for PhageAI account (accession token) and result structure
-        """
-
-        # Access token is associated with the PhageAI active user account
-        # You can find it in the "My profile" subpage ("API access" section)
-        self.access_token = access_token
-        self.result = {}
 
     def predict(self, fasta_path: str) -> dict:
         """
@@ -34,18 +22,18 @@ class LifeCycleClassifier:
         for passed bacteriophage FASTA file
         """
 
+        result = None
+
         if os.path.exists(fasta_path):
             with open(fasta_path, "rb") as fasta:
                 try:
-                    response = requests.post(
-                        base64.b64decode(self.API_URL),
-                        data={
-                            "access_token": self.access_token,
-                        },
+                    response = self._make_request(
+                        path="lifecycle_prediction/",
+                        method="post",
                         files=[("file", fasta)],
                     )
 
-                    self.result = response.json()
+                    result = response.json()
 
                     if response.status_code == self.EXPECTED_HTTP_STATUS:
                         logging.info(
@@ -53,7 +41,7 @@ class LifeCycleClassifier:
                         )
                     else:
                         logging.warning(
-                            f'[PhageAI] Exception was raised: "{self.result}"'
+                            f'[PhageAI] Exception was raised: "{result}"'
                         )
                 except requests.exceptions.RequestException as e:
                     logging.warning(f'[PhageAI] Exception was raised: "{e}"')
@@ -62,4 +50,4 @@ class LifeCycleClassifier:
                 f'[PhageAI] Exception was raised: "{fasta_path}" doesn\'t exists'
             )
 
-        return self.result
+        return result
