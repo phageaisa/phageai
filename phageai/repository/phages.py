@@ -1,4 +1,5 @@
 import logging
+
 import requests
 
 from phageai.phageai_auth import PhageAIConnector
@@ -13,7 +14,7 @@ class BacteriophageRepository(PhageAIConnector):
         Return dict with bacteriophage meta-data
         """
 
-        result = None
+        result = {}
 
         try:
             response = self._make_request(
@@ -36,7 +37,7 @@ class BacteriophageRepository(PhageAIConnector):
         Return list of dicts contained top-10 most similar bacteriophages
         """
 
-        result = None
+        result = {}
 
         try:
             response = self._make_request(
