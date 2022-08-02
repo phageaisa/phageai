@@ -17,20 +17,15 @@ class BacteriophageRepository(PhageAIConnector):
 
         try:
             response = self._make_request(
-                path=self._encode(f"{self._decode(self.PATH)}{value}/"),
-                method="get"
+                path=self._encode(f"{self._decode(self.PATH)}{value}/"), method="get"
             )
 
             result = response.json()
 
             if response.status_code == self.EXPECTED_HTTP_STATUS:
-                logging.info(
-                    f"[PhageAI] Phage get record executed successfully"
-                )
+                logging.info(f"[PhageAI] Phage get record executed successfully")
             else:
-                logging.warning(
-                    f'[PhageAI] Exception was raised: "{result}"'
-                )
+                logging.warning(f'[PhageAI] Exception was raised: "{result}"')
         except requests.exceptions.RequestException as e:
             logging.warning(f'[PhageAI] Exception was raised: "{e}"')
 
@@ -45,8 +40,10 @@ class BacteriophageRepository(PhageAIConnector):
 
         try:
             response = self._make_request(
-                path=self._encode(f"{self._decode(self.PATH)}{value}{self._decode('L3RvcF8xMC8=')}"),
-                method="get"
+                path=self._encode(
+                    f"{self._decode(self.PATH)}{value}{self._decode('L3RvcF8xMC8=')}"
+                ),
+                method="get",
             )
 
             result = response.json()
@@ -56,9 +53,7 @@ class BacteriophageRepository(PhageAIConnector):
                     f"[PhageAI] Phage top-10 similar phages executed successfully"
                 )
             else:
-                logging.warning(
-                    f'[PhageAI] Exception was raised: "{result}"'
-                )
+                logging.warning(f'[PhageAI] Exception was raised: "{result}"')
         except requests.exceptions.RequestException as e:
             logging.warning(f'[PhageAI] Exception was raised: "{e}"')
 

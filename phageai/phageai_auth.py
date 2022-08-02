@@ -21,9 +21,12 @@ class PhageAIConnector:
     def __init__(self, access_token: str) -> None:
         if not access_token:
             raise ValueError(
-                "[PhageAI] Token Error: Please provide correct access token. If you need more information, please check README.")
+                "[PhageAI] Token Error: Please provide correct access token. If you need more information, please check README."
+            )
         if self._is_uuid(access_token):
-            raise ValueError("[PhageAI] Token Error: We have change our TOS and Policy. Please login to PhageAI Web platform (https://app.phage.ai/) and create new access token.")
+            raise ValueError(
+                "[PhageAI] Token Error: We have change our TOS and Policy. Please login to PhageAI Web platform (https://app.phage.ai/) and create new access token."
+            )
         self.access_token = access_token
         self.result = {}
 
@@ -67,14 +70,10 @@ class PhageAIConnector:
             reason = response.reason
 
         if 400 <= response.status_code < 500:
-            http_error_msg = (
-                f"[PhageAI] Connection Client Error: Response Status Code - {response.status_code} Reason: {reason}"
-            )
+            http_error_msg = f"[PhageAI] Connection Client Error: Response Status Code - {response.status_code} Reason: {reason}"
 
         elif 500 <= response.status_code < 600:
-            http_error_msg = (
-                f"[PhageAI] Connection Server Error: Response Status Code - {response.status_code} Reason: {reason}"
-            )
+            http_error_msg = f"[PhageAI] Connection Server Error: Response Status Code - {response.status_code} Reason: {reason}"
 
         if http_error_msg:
             raise requests.HTTPError(http_error_msg, response=response)
@@ -86,9 +85,7 @@ class PhageAIConnector:
 
         headers = self._create_auth_header()
 
-        logging.info(
-            f"[PhageAI] Method: {method}"
-        )
+        logging.info(f"[PhageAI] Method: {method}")
 
         response = getattr(requests, method)(
             url=self._create_url(path),

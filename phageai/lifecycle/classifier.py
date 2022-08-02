@@ -13,6 +13,7 @@ class LifeCycleClassifier(PhageAIConnector):
     All the research and scientific details were published in the paper:
     DOI: 10.1101/2020.07.11.198606
     """
+
     PATH = "bGlmZWN5Y2xlX3ByZWRpY3Rpb24v"
     EXPECTED_HTTP_STATUS = 201
 
@@ -40,9 +41,7 @@ class LifeCycleClassifier(PhageAIConnector):
                             f"[PhageAI] Life cycle classifier executed successfully"
                         )
                     else:
-                        logging.warning(
-                            f'[PhageAI] Exception was raised: "{result}"'
-                        )
+                        logging.warning(f'[PhageAI] Exception was raised: "{result}"')
                 except requests.exceptions.RequestException as e:
                     logging.warning(f'[PhageAI] Exception was raised: "{e}"')
         else:
