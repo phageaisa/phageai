@@ -56,7 +56,7 @@ pip install phageai
 If you can't wait for the latest hotness from the develop branch, then install it directly from the repository:
 
 ```
-pip install git+git://github.com/phageaisa/phageai.git@develop
+pip install git+https://github.com/phageaisa/phageai.git@develop
 ```
 
 #### PhageAI execution (3/3)

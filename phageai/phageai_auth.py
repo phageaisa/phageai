@@ -1,10 +1,9 @@
 import base64
-
 import logging
-
-import requests
 import uuid
 from urllib.parse import urljoin
+
+import requests
 
 logging.basicConfig(level=logging.INFO)
 
@@ -16,7 +15,7 @@ class PhageAIConnector:
 
     REQUEST_TIMEOUT = 30
 
-    BASE_URL = "aHR0cHM6Ly9jb3JlLnBoYWdlLmFpL2FwaS8="
+    BASE_URL = "aHR0cHM6Ly9jb3JlLnBoYWdlLmFpL2FwaS92MS9waGFnZWFpLXBhY2thZ2Uv"
 
     def __init__(self, access_token: str) -> None:
         if not access_token:
