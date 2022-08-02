@@ -2,23 +2,23 @@
   <img src="https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai.jpeg">
 </p>
 
-**PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.  
+**PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.
 
-Machine Learning algorithms can process enormous amounts of data in relatively short time in order to find connections and dependencies that are unobvious for human beings. Correctly designed applications based on AI are able to vastly improve and speed up the work of the domain experts.  
+Machine Learning algorithms can process enormous amounts of data in relatively short time in order to find connections and dependencies that are unobvious for human beings. Correctly designed applications based on AI are able to vastly improve and speed up the work of the domain experts.
 
-Models based on DNA contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **chronic**, **temperate** or **virulent** with a high probability.  
+Models based on DNA contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **chronic**, **temperate** or **virulent** with a high probability.
 
-One of the key system modules is the bacteriophages repository with a clean web interface that allows to browse, upload and share data with other users. The gathered knowledge about the bacteriophages is not only valuable on its own but also because of the ability to train the ever-improving Machine Learning models.  
+One of the key system modules is the bacteriophages repository with a clean web interface that allows to browse, upload and share data with other users. The gathered knowledge about the bacteriophages is not only valuable on its own but also because of the ability to train the ever-improving Machine Learning models.
 
-Detection of virulent or temperate features is only one of the first tasks that can be solved with Artificial Intelligence. The combination of Biology, Natural Language Processing and Machine Learning allows us to create algorithms for genomic data processing that could eventually turn out to be effective in a wide range of problems with focus on classification and information extraced from DNA.  
-  
+Detection of virulent or temperate features is only one of the first tasks that can be solved with Artificial Intelligence. The combination of Biology, Natural Language Processing and Machine Learning allows us to create algorithms for genomic data processing that could eventually turn out to be effective in a wide range of problems with focus on classification and information extraced from DNA.
+
 
 [![PyPI version](https://img.shields.io/pypi/v/phageai.svg)](https://pypi.org/project/phageai/)
 [![PyPI license](https://img.shields.io/pypi/l/phageai.svg)](https://pypi.python.org/pypi/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/phageai.svg)](https://pypi.python.org/pypi/phageai/)
 [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Downloads](https://static.pepy.tech/badge/phageai)](https://pepy.tech/project/phageai)
-[![Twitter Follow](https://img.shields.io/twitter/follow/phageai.svg?style=social)](https://twitter.com/phageai) 
+[![Twitter Follow](https://img.shields.io/twitter/follow/phageai.svg?style=social)](https://twitter.com/phageai)
 
 
 ## Table of Contents
@@ -29,9 +29,9 @@ Detection of virulent or temperate features is only one of the first tasks that 
 
 Set of methods related with:
 * `lifecycle` - bacteriophage lifecycle prediction:
-  * `.predict(fasta_path)` - return bacteriophage lifecycle prediction class (Virulent, Temperate or Chronic) with probability (%); 
-* `taxonomy` - bacteriophage taxonomy order, family and genus prediction (TBA);  
-* `topology` - bacteriophage genome topology prediction (TBA);  
+  * `.predict(fasta_path)` - return bacteriophage lifecycle prediction class (Virulent, Temperate or Chronic) with probability (%);
+* `taxonomy` - bacteriophage taxonomy order, family and genus prediction (TBA);
+* `topology` - bacteriophage genome topology prediction (TBA);
 * `repository` - set of methods related with PhageAI bacteriophage repository:
   * `.get_record(value)` - return dict with Bacteriophage meta-data
   * `.get_top10_similar_phages(value)` - return list of dicts contained top-10 most similar bacteriophages
@@ -39,7 +39,7 @@ Set of methods related with:
 ## Installation and usage
 
 #### PhageAI user account (1/3)
-Create a free user account in [the PhageAI web platform](https://phage.ai/) or use an existing one. If you had to create new one, activate your account by activation link which was sent on your mail inbox. After that, log into the platform successfully and click "My profile" on menu (left sidebar). From the "API access" section copy the access token (string) and keep it for the steps below.
+Create a free user account in [the PhageAI web platform](https://app.phage.ai/) or use an existing one. If you had to create new one, activate your account by activation link which was sent on your mail inbox. After that, log into the platform successfully and click "My profile" in the top-right menu. In the "API access" section create a new access token (string) and copy it for the steps below.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai-access-token.png">
@@ -61,7 +61,7 @@ pip install git+git://github.com/phageaisa/phageai.git@develop
 
 #### PhageAI execution (3/3)
 
-`PASTE_YOUR_ACCESS_TOKEN_HERE` - PhageAI web user's access token;  
+`PASTE_YOUR_ACCESS_TOKEN_HERE` - PhageAI web user's access token;
 `PASTE_YOUR_FASTA_PATH_HERE` - FASTA filename with *.fasta or *.fa extension;
 
 ### Example I - single phage prediction
@@ -204,7 +204,7 @@ The PhageAI package is released under the under terms of [the MIT License](https
 
 ## Cite
 
-> **PhageAI - Bacteriophage Life Cycle Recognition with Machine Learning and Natural Language Processing**  
+> **PhageAI - Bacteriophage Life Cycle Recognition with Machine Learning and Natural Language Processing**
 >
 > Tynecki, P.; Guziński, A.; Kazimierczak, J.; Jadczuk, M.; Dastych, J.; Onisko, A.
 >

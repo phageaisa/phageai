@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.4.0] - 13.07.2022
+## [0.4.0] - 02.08.2022
 ### Changed
 * Refactored PhageAI API connectors;
 
