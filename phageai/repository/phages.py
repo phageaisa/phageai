@@ -6,6 +6,7 @@ from phageai.phageai_auth import PhageAIConnector
 
 class BacteriophageRepository(PhageAIConnector):
     EXPECTED_HTTP_STATUS = 200
+    PATH = "YmFjdGVyaW9waGFnZS8="
 
     def get_record(self, value: str) -> dict:
         """
@@ -16,7 +17,7 @@ class BacteriophageRepository(PhageAIConnector):
 
         try:
             response = self._make_request(
-                path=f"bacteriophage/{value}/",
+                path=self._encode(f"{self._decode(self.PATH)}{value}/"),
                 method="get"
             )
 
@@ -44,7 +45,7 @@ class BacteriophageRepository(PhageAIConnector):
 
         try:
             response = self._make_request(
-                path=f"bacteriophage/{value}/top_10/",
+                path=self._encode(f"{self._decode(self.PATH)}{value}{self._decode('L3RvcF8xMC8=')}"),
                 method="get"
             )
 

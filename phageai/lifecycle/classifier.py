@@ -13,7 +13,7 @@ class LifeCycleClassifier(PhageAIConnector):
     All the research and scientific details were published in the paper:
     DOI: 10.1101/2020.07.11.198606
     """
-
+    PATH = "bGlmZWN5Y2xlX3ByZWRpY3Rpb24v"
     EXPECTED_HTTP_STATUS = 201
 
     def predict(self, fasta_path: str) -> dict:
@@ -22,13 +22,13 @@ class LifeCycleClassifier(PhageAIConnector):
         for passed bacteriophage FASTA file
         """
 
-        result = None
+        result = {}
 
         if os.path.exists(fasta_path):
             with open(fasta_path, "rb") as fasta:
                 try:
                     response = self._make_request(
-                        path="lifecycle_prediction/",
+                        path=self.PATH,
                         method="post",
                         files=[("file", fasta)],
                     )
