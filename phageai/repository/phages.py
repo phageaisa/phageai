@@ -42,7 +42,7 @@ class BacteriophageRepository(PhageAIConnector):
         try:
             response = self._make_request(
                 path=self._encode(
-                    f"{self._decode(self.PATH)}{value}{self._decode('L3RvcF8xMC8=')}"
+                    f"{self._decode(self.PATH)}{value}{self._decode('L3RvcC0xMC8=')}"
                 ),
                 method="get",
             )
