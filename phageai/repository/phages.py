@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 import requests
 
@@ -9,12 +10,12 @@ class BacteriophageRepository(PhageAIConnector):
     EXPECTED_HTTP_STATUS = 200
     PATH = "YmFjdGVyaW9waGFnZS8="
 
-    def get_record(self, value: str) -> dict:
+    def get_record(self, value: str) -> List[dict]:
         """
         Return dict with bacteriophage meta-data
         """
 
-        result = {}
+        result = []
 
         try:
             response = self._make_request(
@@ -32,12 +33,12 @@ class BacteriophageRepository(PhageAIConnector):
 
         return result
 
-    def get_top10_similar_phages(self, value: str) -> dict:
+    def get_top10_similar_phages(self, value: str) -> List[dict]:
         """
         Return list of dicts contained top-10 most similar bacteriophages
         """
 
-        result = {}
+        result = []
 
         try:
             response = self._make_request(

@@ -70,7 +70,6 @@ class PhageAIConnector:
 
         if 400 <= response.status_code < 500:
             http_error_msg = f"[PhageAI] Connection Client Error: Response Status Code - {response.status_code} Reason: {reason}"
-
         elif 500 <= response.status_code < 600:
             http_error_msg = f"[PhageAI] Connection Server Error: Response Status Code - {response.status_code} Reason: {reason}"
 
