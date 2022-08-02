@@ -7,16 +7,18 @@ CURRENT_DIR = Path(__file__).parent
 
 long_description = (CURRENT_DIR / "README.md").read_text(encoding="utf8")
 
-description = "PhageAI is an AI-driven software platform using advanced Machine Learning" \
-              " and Natural Language Processing techniques for deeper understanding of" \
-              " the bacteriophages genomics."
+description = (
+    "PhageAI is an AI-driven software platform using advanced Machine Learning"
+    " and Natural Language Processing techniques for deeper understanding of"
+    " the bacteriophages genomics."
+)
 
 # Read requirements and process as list of strings
 dependencies = (CURRENT_DIR / "requirements.txt").read_text()
 dependencies = list(map(str.strip, filter(None, dependencies.split("\n"))))
 
 
-version = "0.3.1"
+version = "0.4.0"
 
 setup(
     name="phageai",
