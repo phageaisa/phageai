@@ -19,6 +19,7 @@ Detection of virulent or temperate features is only one of the first tasks that 
 [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Downloads](https://static.pepy.tech/badge/phageai)](https://pepy.tech/project/phageai)
 [![Twitter Follow](https://img.shields.io/twitter/follow/phageai.svg?style=social)](https://twitter.com/phageai)
+[![LinkedIn Follow](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=appveyor)](https://pl.linkedin.com/company/phageai-s-a)
 
 
 ## Table of Contents
