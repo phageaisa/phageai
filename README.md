@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/phageaisa/phageai/main/media/phageai.jpeg">
+  <img src="https://phage.ai/assets/images/phageai_logo2.svg">
 </p>
 
 **PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.
