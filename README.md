@@ -211,4 +211,5 @@ The PhageAI package is released under the under terms of [the MIT License](https
 >
 > Tynecki, P.; Guziński, A.; Kazimierczak J.; Zimoń B.; Szulc Ż.; Jadczuk, M.; Dastych, J.; Onisko, A.
 >
-> Bioinformatics 2020, DOI: [10.1101/2020.07.11.198606](https://doi.org/10.1101/2020.07.11.198606)
+> Viruses, Special Issue "Bacteriophage Bioinformatics"
+(ISSN 1999-4915), DOI: [10.1101/2020.07.11.198606](https://doi.org/10.1101/2020.07.11.198606)
