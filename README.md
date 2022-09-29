@@ -158,7 +158,7 @@ We will share numerous examples of using the package in Jupyter Notebook format 
 
 ## Benchmark
 
-PhageAI lifecycle classifier was benchmarked with [DeePhage](https://github.com/shufangwu/DeePhage), [bacphlip](https://github.com/adamhockenberry/bacphlip), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [PHACTS](https://github.com/deprekate/PHACTS) tools using 91 Virulent and Temperate bacteriophages from our paper (testing set). Correct predictions results:
+PhageAI lifecycle classifier was benchmarked with [DeePhage](https://github.com/shufangwu/DeePhage), [bacphlip](https://github.com/adamhockenberry/bacphlip), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [PHACTS](https://github.com/deprekate/PHACTS) tools using 104 Virulent and Temperate bacteriophages from our paper (testing set). Correct predictions results:
 
 Tool | Version   | Chronic support | Phage sequences used in research | Test set accuracy (%) | DOI |
 --- |-----------| --- |----------------------------------|-----------------------| --- |
