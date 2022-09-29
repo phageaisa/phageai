@@ -1,7 +1,7 @@
-from setuptools import setup
 from glob import glob
 from pathlib import Path
 
+from setuptools import setup
 
 CURRENT_DIR = Path(__file__).parent
 
@@ -18,7 +18,7 @@ dependencies = (CURRENT_DIR / "requirements.txt").read_text()
 dependencies = list(map(str.strip, filter(None, dependencies.split("\n"))))
 
 
-version = "0.4.0"
+version = "0.4.1"
 
 setup(
     name="phageai",

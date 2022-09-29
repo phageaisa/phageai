@@ -148,10 +148,10 @@ phageai_repo = BacteriophageRepository(access_token='PASTE_YOUR_ACCESS_TOKEN_HER
 
 # Get bacteriophage meta-data based on accession number (or hash value)
 # It can return one or more than one results
-phageai_repo.get_record(value='MZ375324')
+phageai_repo.get_record(value='NC_000866')
 
 # Get top 10 similar bacteriophage samples
-phageai_repo.get_top10_similar_phages(value='MZ375324')
+phageai_repo.get_top10_similar_phages(value='NC_000866')
 ```
 
 We will share numerous examples of using the package in Jupyter Notebook format (*.ipynb) soon.
@@ -160,13 +160,13 @@ We will share numerous examples of using the package in Jupyter Notebook format 
 
 PhageAI lifecycle classifier was benchmarked with [DeePhage](https://github.com/shufangwu/DeePhage), [bacphlip](https://github.com/adamhockenberry/bacphlip), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [PHACTS](https://github.com/deprekate/PHACTS) tools using 91 Virulent and Temperate bacteriophages from our paper (testing set). Correct predictions results:
 
-Tool | Version | Chronic support | No. viruses' genomes | Test set accuracy | DOI |
---- | --- | --- | --- | --- | --- |
-**PhageAI** | **1.5** | **Yes** | **17 559** | **98,90** | **This research** |
-DeePhage | 1.0 | No | 1 640 | N/A | 10.1093/gigascience/giab056 |
-bacphlip | 0.9.6 | No | 1 057 | 100 | 10.7717/peerj.11396 |
-VIBRANT | 1.2.1 | No | 350 626 | 92,31 | 10.1186/s40168-020-00867-0 |
-PHACTS | 0.3 | No | 227 | 89,13 | 10.1093/bioinformatics/bts014 |
+Tool | Version   | Chronic support | Phage sequences used in research | Test set accuracy (%) | DOI |
+--- |-----------| --- | --- |-----------------------| --- |
+**PhageAI** | **0.4.1** | **Yes** | **15,235** | **93,27**             | **This research** |
+DeePhage | 1.0       | No | 1 640 | 84.62                 | 10.1093/gigascience/giab056 |
+bacphlip | 0.9.6     | No | 1 057 | 100                   | 10.7717/peerj.11396 |
+VIBRANT | 1.2.1     | No | 350 626 | 85.58                 | 10.1186/s40168-020-00867-0 |
+PHACTS | 1.8       | No | 227 | 75,00                 | 10.1093/bioinformatics/bts014 |
 
 ## Community and Contributions
 
@@ -192,6 +192,8 @@ Core Developers and Domain Experts who contributing to PhageAI:
 * Joanna Kazimierczak
 * Arkadiusz Guziński
 * Bogumił Zimoń
+* Żaneta Szulc
+* Maria Urbanowicz
 
 ## Change log
 
@@ -207,6 +209,6 @@ The PhageAI package is released under the under terms of [the MIT License](https
 
 > **PhageAI - Bacteriophage Life Cycle Recognition with Machine Learning and Natural Language Processing**
 >
-> Tynecki, P.; Guziński, A.; Kazimierczak, J.; Jadczuk, M.; Dastych, J.; Onisko, A.
+> Tynecki, P.; Guziński, A.; Kazimierczak J.; Zimoń B.; Szulc Ż.; Jadczuk, M.; Dastych, J.; Onisko, A.
 >
 > Bioinformatics 2020, DOI: [10.1101/2020.07.11.198606](https://doi.org/10.1101/2020.07.11.198606)
