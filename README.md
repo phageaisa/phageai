@@ -161,12 +161,12 @@ We will share numerous examples of using the package in Jupyter Notebook format 
 PhageAI lifecycle classifier was benchmarked with [DeePhage](https://github.com/shufangwu/DeePhage), [bacphlip](https://github.com/adamhockenberry/bacphlip), [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) and [PHACTS](https://github.com/deprekate/PHACTS) tools using 91 Virulent and Temperate bacteriophages from our paper (testing set). Correct predictions results:
 
 Tool | Version   | Chronic support | Phage sequences used in research | Test set accuracy (%) | DOI |
---- |-----------| --- | --- |-----------------------| --- |
-**PhageAI** | **0.4.1** | **Yes** | **15,235** | **93,27**             | **This research** |
-DeePhage | 1.0       | No | 1 640 | 84.62                 | 10.1093/gigascience/giab056 |
-bacphlip | 0.9.6     | No | 1 057 | 100                   | 10.7717/peerj.11396 |
-VIBRANT | 1.2.1     | No | 350 626 | 85.58                 | 10.1186/s40168-020-00867-0 |
-PHACTS | 1.8       | No | 227 | 75,00                 | 10.1093/bioinformatics/bts014 |
+--- |-----------| --- |----------------------------------|-----------------------| --- |
+**PhageAI** | **0.4.1** | **Yes** | **15,235**                       | **93.27**             | **This research** |
+DeePhage | 1.0       | No | 1,640                            | 84.62                 | 10.1093/gigascience/giab056 |
+bacphlip | 0.9.6     | No | 1,057                            | 100                   | 10.7717/peerj.11396 |
+VIBRANT | 1.2.1     | No | 350,626                          | 85.58                 | 10.1186/s40168-020-00867-0 |
+PHACTS | 1.8       | No | 227                              | 75.00                 | 10.1093/bioinformatics/bts014 |
 
 ## Community and Contributions
 
