@@ -124,7 +124,7 @@ for fasta, phageai in prediction_results.items():
 # Prepare CSV report as a final result
 csv_columns = [
     'fasta_name', 'model_class_label', 'prediction_accuracy',
-    'gc', 'sequence_length'
+    'gc', 'sequence_length', 'hash', 'predicted_lifecycle'
 ]
 
 # CSV file name
