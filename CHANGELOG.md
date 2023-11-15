@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 15.11.2023
+### Changed
+* Reimplemented connector to the PhageAI API; 
+* Added support to taxonomy classification (order, family, genus), top-10 similarities, annotation and proteins class prediction, full phage characteristic report and phage repository;
+* `README.md` updated; 
+
+
 ## [0.4.2] - 29.09.2023
 ### Changed
 * `README.md` updated;
