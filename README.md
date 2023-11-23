@@ -28,7 +28,7 @@ Detection of virulent or temperate features is only one of the first tasks that 
 
 ## Available methods
 
-* `upload(fasta_path, access)` - upload FASTA file with phage genome as "public" or "private" sample in the PhageAI repository. Upload stage is starting the bioinformatics pipeline execution for phage characteristic.
+* `upload(fasta_path, access)` - upload FASTA file with phage genome as "public", "private" or "" (temporary) sample in the PhageAI repository. Upload stage is starting the bioinformatics pipeline execution for phage characteristic.
 * `processing_status(job_id)` - get current processing status for your phage sample related with Job ID;
 * `get_lifecycle_classification(job_id)` - get phage lifecycle classification result;
 * `get_taxonomy_classification(job_id)` - get phage taxonomy classification results for order, family and genus;

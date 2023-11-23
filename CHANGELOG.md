@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 * Reimplemented connector to the PhageAI API; 
 * Added support to taxonomy classification (order, family, genus), top-10 similarities, annotation and proteins class prediction, full phage characteristic report and phage repository;
+* Removed support for `LifeCycleClassifier` and `BacteriophageRepository` classes;
 * `README.md` updated; 
 
 

@@ -3,6 +3,8 @@ import uuid
 
 import requests
 
+from urllib.parse import urljoin
+
 from . import PHAGEAI_BASE_URL
 
 logging.basicConfig(level=logging.INFO)
@@ -15,7 +17,7 @@ class PhageAIConnector:
 
     REQUEST_TIMEOUT = 30
 
-    BASE_URL = f"{PHAGEAI_BASE_URL}/api/v1/phageai-package"
+    API_URL = urljoin(PHAGEAI_BASE_URL, "/api/v1/phageai-package/")
 
     def __init__(self, access_token: str) -> None:
         if not access_token:
@@ -73,7 +75,7 @@ class PhageAIConnector:
         headers = self._create_auth_header()
 
         response = getattr(requests, method)(
-            url=f"{self.BASE_URL}/{path}",
+            url=urljoin(self.API_URL, path),
             headers=headers,
             timeout=self.REQUEST_TIMEOUT,
             **kwargs

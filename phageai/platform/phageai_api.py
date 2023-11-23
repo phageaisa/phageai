@@ -10,7 +10,10 @@ from phageai.phageai_auth import PhageAIConnector
 class PhageAIAccounts(PhageAIConnector):
     def upload(self, fasta_path: str, access: str = "private") -> dict:
         """
-        Upload FASTA file as "public" or "private" sample in the PhageAI repository
+        Upload FASTA file as "public", "private" or "" (temporary) sample in the PhageAI repository
+        - "public" means that all the users will be able to see and download the sample;
+        - "private" means that only you (as user) will be able to see and download the sample;
+        - "" (temporary) means that the sample will be not hosted in the platform longer than during the processing;
 
         Upload stage is starting the pipeline execution for phage characteristic
 
