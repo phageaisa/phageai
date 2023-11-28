@@ -1,9 +1,11 @@
-import base64
 import logging
 import uuid
-from urllib.parse import urljoin
 
 import requests
+
+from urllib.parse import urljoin
+
+from . import PHAGEAI_BASE_URL
 
 logging.basicConfig(level=logging.INFO)
 
@@ -15,7 +17,7 @@ class PhageAIConnector:
 
     REQUEST_TIMEOUT = 30
 
-    BASE_URL = "aHR0cHM6Ly9jb3JlLnBoYWdlLmFpL2FwaS92MS9waGFnZWFpLXBhY2thZ2Uv"
+    API_URL = urljoin(PHAGEAI_BASE_URL, "/api/v1/phageai-package/")
 
     def __init__(self, access_token: str) -> None:
         if not access_token:
@@ -39,19 +41,8 @@ class PhageAIConnector:
 
     def _create_auth_header(self) -> dict:
         return {
-            "Authorization": f"Bearer {self.access_token}",
+            "Authorization": f"Bearer {self.access_token}"
         }
-
-    @staticmethod
-    def _encode(value: str) -> str:
-        return base64.b64encode(value.encode()).decode("utf-8")
-
-    @staticmethod
-    def _decode(value: str) -> str:
-        return base64.b64decode(value).decode("utf-8")
-
-    def _create_url(self, path) -> str:
-        return urljoin(self._decode(self.BASE_URL), self._decode(path))
 
     @staticmethod
     def _check_status(response):
@@ -83,13 +74,11 @@ class PhageAIConnector:
 
         headers = self._create_auth_header()
 
-        logging.info(f"[PhageAI] Method: {method}")
-
         response = getattr(requests, method)(
-            url=self._create_url(path),
+            url=urljoin(self.API_URL, path),
             headers=headers,
             timeout=self.REQUEST_TIMEOUT,
-            **kwargs,
+            **kwargs
         )
 
         self._check_status(response)

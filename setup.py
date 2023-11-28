@@ -18,7 +18,7 @@ dependencies = (CURRENT_DIR / "requirements.txt").read_text()
 dependencies = list(map(str.strip, filter(None, dependencies.split("\n"))))
 
 
-version = "0.4.2"
+version = "1.0.0"
 
 setup(
     name="phageai",
@@ -35,8 +35,7 @@ setup(
     install_requires=dependencies,
     packages=[
         "phageai",
-        "phageai.repository",
-        "phageai.lifecycle",
+        "phageai.platform"
     ],
     data_files=glob("examples/*/**"),
     include_package_data=True,
@@ -47,6 +46,8 @@ setup(
         "phage research",
         "phage lifecycle",
         "phage taxonomy",
+        "phage similarity",
+        "phage characteristics",
         "virulent phage",
         "temperate phage",
         "chronic phage",

@@ -2,11 +2,11 @@
   <img src="https://phage.ai/assets/images/phageai_logo2.svg">
 </p>
 
-**PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a tool to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.
+**PhageAI** is an application that simultaneously represents **a repository of knowledge of bacteriophages** and a bioinformatics pipeline to analyse genomes with **Artificial Intelligence support**. This package supports the most critical programmable features from our platform.
 
-Machine Learning algorithms can process enormous amounts of data in relatively short time in order to find connections and dependencies that are unobvious for human beings. Correctly designed applications based on AI are able to vastly improve and speed up the work of the domain experts.
+Machine Learning algorithms can process enormous amounts of data in relatively short time in order to find connections and dependencies that are obvious for human beings. Correctly designed applications based on AI are able to vastly improve and speed up the work of the domain experts.
 
-Models based on DNA contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **chronic**, **temperate** or **virulent** with a high probability.
+Models based on DNA or proteins contextual vectorization and Deep Neural Networks are particularly effective when it comes to analysis of genomic data. The system that we propose aims to use the phages sequences uploaded to the database to build a model which is able to predict if a bacteriophage is **chronic**, **temperate** or **virulent** with a high probability. Furthermore, our system shares more prediction methods for phage taxonomy, phage similarity and annotation extended by proteins structural classes classification.
 
 One of the key system modules is the bacteriophages repository with a clean web interface that allows to browse, upload and share data with other users. The gathered knowledge about the bacteriophages is not only valuable on its own but also because of the ability to train the ever-improving Machine Learning models.
 
@@ -24,18 +24,19 @@ Detection of virulent or temperate features is only one of the first tasks that 
 
 ## Table of Contents
 
-[Framework modules](https://github.com/phageaisa/phageai#framework-modules) | [Installation](https://github.com/phageaisa/phageai#installation-and-usage) | [Benchmark](https://github.com/phageaisa/phageai#benchmark) | [Community and Contributions](https://github.com/phageaisa/phageai#community-and-contributions) | [Have a question?](https://github.com/phageaisa/phageai#have-a-question) | [Found a bug?](https://github.com/phageaisa/phageai#found-a-bug) | [Team](https://github.com/phageaisa/phageai#team) | [Change log](https://github.com/phageaisa/phageai#change-log) | [License](https://github.com/phageaisa/phageai#license) | [Cite](https://github.com/phageaisa/phageai#cite)
+[Available methods](https://github.com/phageaisa/phageai#available-methods) | [Installation](https://github.com/phageaisa/phageai#installation-and-usage) | [Benchmark](https://github.com/phageaisa/phageai#benchmark) | [Community and Contributions](https://github.com/phageaisa/phageai#community-and-contributions) | [Have a question?](https://github.com/phageaisa/phageai#have-a-question) | [Found a bug?](https://github.com/phageaisa/phageai#found-a-bug) | [Team](https://github.com/phageaisa/phageai#team) | [Change log](https://github.com/phageaisa/phageai#change-log) | [License](https://github.com/phageaisa/phageai#license) | [Cite](https://github.com/phageaisa/phageai#cite)
 
-## Framework modules
+## Available methods
 
-Set of methods related with:
-* `lifecycle` - bacteriophage lifecycle prediction:
-  * `.predict(fasta_path)` - return bacteriophage lifecycle prediction class (Virulent, Temperate or Chronic) with probability (%);
-* `taxonomy` - bacteriophage taxonomy order, family and genus prediction (TBA);
-* `topology` - bacteriophage genome topology prediction (TBA);
-* `repository` - set of methods related with PhageAI bacteriophage repository:
-  * `.get_record(value)` - return dict with Bacteriophage meta-data
-  * `.get_top10_similar_phages(value)` - return list of dicts contained top-10 most similar bacteriophages
+* `upload(fasta_path, access)` - upload FASTA file with phage genome as "public", "private" or "" (temporary) sample in the PhageAI repository. Upload stage is starting the bioinformatics pipeline execution for phage characteristic.
+* `processing_status(job_id)` - get current processing status for your phage sample related with Job ID;
+* `get_lifecycle_classification(job_id)` - get phage lifecycle classification result;
+* `get_taxonomy_classification(job_id)` - get phage taxonomy classification results for order, family and genus;
+* `get_proteins_classification(job_id)` - get phage proteins structural classes classification results;
+* `get_top10_similarities(job_id)` - get TOP-10 similar phages to your sample from the repository;
+* `get_full_report(job_id)` - get full phage characteristics report (all meta-data and predictions);
+* `get_phage_characteristic(accession_number)` - get meta-data about publicly available phage with specific accession number (with version);
+
 
 ## Installation and usage
 
@@ -65,26 +66,24 @@ pip install git+https://github.com/phageaisa/phageai.git@develop
 `PASTE_YOUR_ACCESS_TOKEN_HERE` - PhageAI web user's access token;
 `PASTE_YOUR_FASTA_PATH_HERE` - FASTA filename with *.fasta or *.fa extension;
 
-### Example I - single phage prediction
+### Example - how to upload phage to repository with private access
 
 ```python
-from phageai.lifecycle.classifier import LifeCycleClassifier
+from phageai.platform import PhageAIAccounts
 
-lcc = LifeCycleClassifier(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
-lcc.predict(fasta_path='PASTE_YOUR_FASTA_PATH_HERE')
+phageai_api = PhageAIAccounts(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
+
+phage_example_jobid = phageai_api.upload(fasta_path="PASTE_YOUR_FASTA_PATH_HERE", access="private")
 ```
 
-Expected output for `MG945357.fasta` bacateriophage sample:
+Expected output should be the job ID value:
 ```json
 {
-    "model_class_label": "Virulent",
-    "prediction_accuracy": "98.94",
-    "gc": "39.47",
-    "sequence_length": 4915
+  'job_id': '0a71e61a-ec58-447b-859e-d9ba15e103a9'
 }
 ```
 
-or, if you reach out daily API requests limit, you can expect:
+or, if you reach out daily API requests limit (100 by default), you can expect:
 
 ```json
 {
@@ -94,67 +93,49 @@ or, if you reach out daily API requests limit, you can expect:
 
 If you reach out your daily requests limit, and you still need more, feel free to contact us by contact@phageai.
 
-### Example II - prediction for directory with phages
+### Example - how to track the processing progress
+
+Tracking progress of phage processing is super useful if you upload more samples in the same time or when you integrate your service or pipeline with PhageAI.
 
 ```python
-import os
-import csv
-from pathlib import Path
+(...)
 
-from phageai.lifecycle.classifier import LifeCycleClassifier
+phage_example_jobid = phageai_api.upload(fasta_path="PASTE_YOUR_FASTA_PATH_HERE", access="private")
 
-lcc = LifeCycleClassifier(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
+job_id = phage_example_jobid["job_id"]
 
-# Be aware that directory have to includes *.fasta files only
-phage_dir_path = Path('PASTE_YOUR_DIRECTORY_NAME_WITH_FASTA_FILES')
-phage_directory = os.listdir(phage_dir_path)
-
-prediction_results = {}
-
-for single_fasta_file in phage_directory:
-    try:
-        prediction_results[single_fasta_file] = lcc.predict(fasta_path=phage_dir_path / single_fasta_file)
-    except Exception as e:
-        print(f'[PhageAI] Phage {single_fasta_file} raised an exception "{e}"')
-
-# Python dict with prediction results
-for fasta, phageai in prediction_results.items():
-    print(fasta, phageai)
-
-# Prepare CSV report as a final result
-csv_columns = [
-    'fasta_name', 'model_class_label', 'prediction_accuracy',
-    'gc', 'sequence_length', 'hash', 'predicted_lifecycle'
-]
-
-# CSV file name
-csv_file = "phageai_report.csv"
-
-with open(csv_file, 'w') as csv_file:
-    writer = csv.DictWriter(csv_file, fieldnames=csv_columns)
-    writer.writeheader()
-
-    for fasta_name, phage_data in zip(prediction_results.keys(), prediction_results.values()):
-        phage_data["fasta_name"] = fasta_name
-        writer.writerow(phage_data)
+phageai_api.processing_status(job_id=job_id)
 ```
 
-### Example III - get bacteriophage meta-data and top-10 similar samples from PhageAI
+Depends on what is the current stage of your sample processing ("Not Started", "In progress", "Done", "Failed"), expected output should be like:
 
 ```python
-from phageai.repository.phages import BacteriophageRepository
-
-phageai_repo = BacteriophageRepository(access_token='PASTE_YOUR_ACCESS_TOKEN_HERE')
-
-# Get bacteriophage meta-data based on accession number (or hash value)
-# It can return one or more than one results
-phageai_repo.get_record(value='NC_000866')
-
-# Get top 10 similar bacteriophage samples
-phageai_repo.get_top10_similar_phages(value='NC_000866')
+{
+  'taxonomy_stage': 'Done',
+  'proteins_stage': 'Not Started',
+  'top10_stage': 'Not Started',
+  'lifecycle_stage': 'Done',
+  'final_report': 'In Progress'
+}
 ```
 
-We will share numerous examples of using the package in Jupyter Notebook format (*.ipynb) soon.
+Each of the above stage is work separately in PhageAI so you can expect different statuses for each of them.
+
+### Example - get lifecycle classification
+
+```python
+(...)
+
+phageai_api.get_lifecycle_classification(job_id=job_id)
+```
+
+Expected output should be like:
+
+```python
+{'value': 'Chronic', 'probability': 99.85}
+```
+
+In the same way you can execute other [available methods](https://github.com/phageaisa/phageai#available-methods) from the package. 
 
 ## Benchmark
 
